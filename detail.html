@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <title>Detail Surah</title>
+  <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+
+  <div class="container">
+    <button class="back-btn" onclick="kembali()">
+      ← Kembali
+    </button>
+
+    <div class="surah-header" id="surahHeader">
+      <div class="loading">Memuat surah...</div>
+    </div>
+
+    <div id="bismillahContainer"></div>
+
+    <div id="ayatList"></div>
+
+    <div class="nav-buttons" id="navButtons" style="display: none;">
+      <button class="nav-btn prev" id="prevBtn" onclick="navigateSurah('prev')">
+        <span>←</span>
+        <span id="prevSurahName">Surah Sebelumnya</span>
+      </button>
+      <button class="nav-btn next" id="nextBtn" onclick="navigateSurah('next')">
+        <span id="nextSurahName">Surah Selanjutnya</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modern Modal -->
+  <div class="modal-overlay" id="tafsirModal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">✨ Tafsir Ayat</h3>
+        <button class="modal-close" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="./js/detail.js"></script>
+
+</body>
+</html>
